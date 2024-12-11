@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<!-- <div class="container-fluid">
+    <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29udGFjdCUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D" alt="" 
+      style="height: 700px; width: 100%; margin-top: 10px; object-fit: cover;border-radius: 10px;">
+
+
+      <h3 style="position: absolute;  top: 350px; left: 700px;">Contact us</h3>
+</div> -->
+<div class="conatiner " >
+    <form method="post" action="/contact">
+
+        {% csrf_token %}
+        <div class="mb-3 mx-3 ">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name"> 
+         
+        </div>
+        <div class="mb-3 mx-3  ">
+            <label for="exampleInputEmail1" class="form-label ">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" id="email" >
+          
+        </div>
+        
+        <div class="mb-3  mx-3  ">
+            
+            <label for="phone" class="phone" >Phone Number</label><br/>
+            <input type="number" for="exampleCheck1" id="phone" name="phone" />
+            
+        </div>
+       
+
+        <div class="mb-3 mx-3  ">
+            <label for="desc" class="form-label "> Reason to contact me </label>
+            <textarea  class="form-control"  id="desc" rows ="3" name="desc" >  </textarea>
+        </div>
+
+
+      
+        <button type="submit" class="btn btn-primary mx-3  ">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
